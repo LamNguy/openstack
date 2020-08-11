@@ -2,13 +2,13 @@
 **Block Storage**
 
 Create a volume : \
-`$ openstack volume create --size volume_size [volume_name]` \
+`$ openstack volume create --size volume_size [volume_name]` 
 
 Attatch volume to an instance : \
-`$ openstack server add volume INSTANCE_NAME VOLUME_NAME` \
+`$ openstack server add volume INSTANCE_NAME VOLUME_NAME` 
 
 More option : \
-`openstack volume create --help` \
+`openstack volume create --help` 
 https://docs.openstack.org/python-openstackclient/pike/cli/command-objects/volume.html#top
 
 **User Management**
