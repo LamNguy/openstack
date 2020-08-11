@@ -1,4 +1,15 @@
 # openstack
+**Block Storage**
+
+Create a volume : \
+`
+$ openstack volume create --size volume_size [volume_name]
+`
+
+
+
+
+
 **User Management**
 Create user alice
 
