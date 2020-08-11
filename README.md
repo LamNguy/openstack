@@ -2,11 +2,10 @@
 **Block Storage**
 
 Create a volume : \
-`
-$ openstack volume create --size volume_size [volume_name]
-`
+`$ openstack volume create --size volume_size [volume_name]` \
 
-
+Attatch volume to an instance : \
+`$ openstack server add volume INSTANCE_NAME VOLUME_NAME`
 
 
 
