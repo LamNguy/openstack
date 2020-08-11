@@ -8,7 +8,7 @@ Attatch volume to an instance : \
 `$ openstack server add volume INSTANCE_NAME VOLUME_NAME` 
 
 More option : \
-`openstack volume create --help` 
+`openstack volume create --help` \
 https://docs.openstack.org/python-openstackclient/pike/cli/command-objects/volume.html#top
 
 **User Management**
@@ -58,5 +58,21 @@ $ openstack role assignment list --user USER_NAME \
 | member      | demo@Default |       | demo@Default |        |        | False     |
 | anotherrole | demo@Default |       | demo@Default |        |        | False     |
 +-------------+--------------+-------+--------------+--------+--------+-----------+
+
+#### Create virtual network
+
+**For provider network** : 
+
+![](https://docs.openstack.org/install-guide/_images/network1-connectivity.png)
+
+Creat the provider network : \
+`$ openstack network create  --share --external \
+  --provider-physical-network provider \
+  --provider-network-type flat provider`
+  
+MAC: media acccess control /
+Ethernet network : Layer 2 or L2 /
+
+**Launch an instance ** 
 
 
