@@ -1,0 +1,11 @@
+###1
+
+/vi/etc/keystone/keystone.conf
+
+[source]
+
+admin_project_domain_name = Default
+admin_project_name = admin
+
+[auth]
+methods = password,token,application_credential
