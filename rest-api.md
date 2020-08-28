@@ -8,7 +8,8 @@ curl -s \
   "http://192.168.0.105:5000/v3/roles/$PRIOR_ROLE_ID/implies/$IMPLIES_ROLE_ID" | python -mjson.tool
 ```
 
--H --header : extra header to include
+-H --header : extra header to include \
+-d --data : \
 -s : silient mode \
 -X --request : PUT , HEAD , GET , HEAD  \
 -i --include : include header response \
