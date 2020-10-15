@@ -22,3 +22,7 @@ Finally, updated the nova bootindex on the mapping table for the volume root fil
    
 https://raymii.org/s/articles/Fix_inconsistent_Openstack_volumes_and_instances_from_Cinder_and_Nova_via_the_database.html
 https://ask.openstack.org/en/question/66918/how-to-delete-volume-with-available-status-and-attached-to/?answer=66921#post-id-66921
+
+
+openstack volume show 211ea613-442e-42db-9438-e51fe2f46487
+nova volume-detach aa04d3e1-ffd7-48ee-af56-37942661598f 211ea613-442e-42db-9438-e51fe2f46487
