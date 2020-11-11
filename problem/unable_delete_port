@@ -1,0 +1,4 @@
+Unable to delete port
+
+neutron port-update $PORT_ID --device_owner compute:None
+
