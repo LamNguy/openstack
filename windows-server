@@ -1,0 +1,27 @@
+windowserver2019-standard.iso
+
+virtio-driver.iso
+https://docs.fedoraproject.org/en-US/quick-docs/creating-windows-virtual-machines-using-virtio-drivers/index.html
+
+
+Virt-manager
+CDROM ws2019.iso,ide
+CDROM virtio.iso,ide
+Disk- virtio-qcow2 15G
+
+
+Install 
+raw format has best performance while qcow2  offers advanced features such as copy on write and Live_Snapshots
+
+
+Launch Windows install
+After starting your VM launch the noVNC console
+Follow the installer steps until you reach the installation type selection where you need to select "Custom (advanced)"
+Now click "Load driver" to install the VirtIO drivers for hard disk and the network.
+Hard disk: Browse to the CD drive where you mounted the VirtIO driver and select folder "vioscsi\2k19\amd64" and confirm. Select the "Red Hat VirtIO SCSI pass-through controller" and click next to install it. Now you should see your drive.
+Network: Repeat the steps from above (click again "Load driver", etc.) and select the folder "NetKVM\2k19\amd64", confirm it and select "Redhat VirtIO Ethernet Adapter" and click next.
+Memory Ballooning: Again, repeat the steps but this time select the "Balloon\2k19\amd64" folder, then the "VirtIO Balloon Driver" and install it by clicking next. With these three drivers you should be good covered to run a fast virtualized Windows 10 system.
+Choose the drive and continue the Windows installer steps.
+
+
+https://docs.openstack.org/image-guide/windows-image.html
