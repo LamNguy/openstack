@@ -1,0 +1,44 @@
+Launch insntacne networks providers
+https://docs.openstack.org/newton/install-guide-rdo/launch-instance-networks-provider.html
+
+
+openstack subnet create --network provider \
+  --allocation-pool start=10.1.21.150,end=10.1.21.200 \
+  --dns-nameserver 8.8.8.8 --gateway 10.1.0.1 \
+  --subnet-range 10.1.0.0/16 provider
+
+
+keystone-manage bootstrap --bootstrap-password ADMIN_PASS \
+  --bootstrap-admin-url http://10.1.22.55:5000/v3/ \
+  --bootstrap-internal-url http://10.1.22.55:5000/v3/ \
+  --bootstrap-public-url http://10.1.22.55:5000/v3/ \
+  --bootstrap-region-id RegionOne
+  
+ openstack server create --flavor m1.nano --image cirros \
+  --nic net-id=da2df036-44ab-46c7-89e5-de19693d8a53 --security-group default \
+  --key-name mykey provider-instance
+ 
+
+virt-sparsify --in-place disk.img
+
+-- compress 
+dd if=/dev/zero of=/some/file
+
+
+nova boot --flavor c1.r1.v1 --nic net-id=8cef69d5-9cf6-4d24-b88b-072f2d6273ce --block-device source=volume,id=deb9333e-9fc5-4a05-860a-65435d161668,dest=volume,size=5,shutdown=remove,bootindex=0 test
+
+ cinder force-delete
+
+
+Openstack quotas
+https://wiki.openstack.org/wiki/OpsGuide-Quotas
+
+  
+  Handling openstack via api
+  https://medium.com/@lalit.garghate/handling-openstack-through-apis-1dd9298b68c8
+
+
+assign-a-floating-ip-using-openstack-python-sdk
+https://ask.openstack.org/en/question/88485/how-to-assign-a-floating-ip-using-openstack-python-sdk-and-nova-network/
+
+https://dbaxps.blogspot.com/2016/02/python-api-for-boot-from-image-creates.html
